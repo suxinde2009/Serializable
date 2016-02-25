@@ -34,6 +34,11 @@
 		276FB5551C7494A30055EC7C /* StringInitializableTest.json in Resources */ = {isa = PBXBuildFile; fileRef = 276FB5541C7494A30055EC7C /* StringInitializableTest.json */; };
 		276FB5571C7495560055EC7C /* StringInitializableTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 276FB5561C7495560055EC7C /* StringInitializableTests.swift */; };
 		276FB55B1C74D1480055EC7C /* ExtensionsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 276FB55A1C74D1480055EC7C /* ExtensionsTests.swift */; };
+		27C16CB51C7F359A00182BC7 /* SerializablePerformanceTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27C16CB41C7F359A00182BC7 /* SerializablePerformanceTest.swift */; };
+		27C16CB71C7F3A2D00182BC7 /* PerformanceTest.json in Resources */ = {isa = PBXBuildFile; fileRef = 27C16CB61C7F3A2D00182BC7 /* PerformanceTest.json */; };
+		27C16CB91C7F3C3700182BC7 /* PerformanceTestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27C16CB81C7F3C3700182BC7 /* PerformanceTestModel.swift */; };
+		27C16CBC1C7F432300182BC7 /* PerformanceSmallTest.json in Resources */ = {isa = PBXBuildFile; fileRef = 27C16CBA1C7F432300182BC7 /* PerformanceSmallTest.json */; };
+		27C16CBD1C7F432300182BC7 /* PerformanceTestSmallModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27C16CBB1C7F432300182BC7 /* PerformanceTestSmallModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -77,6 +82,11 @@
 		276FB5541C7494A30055EC7C /* StringInitializableTest.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = StringInitializableTest.json; sourceTree = "<group>"; };
 		276FB5561C7495560055EC7C /* StringInitializableTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringInitializableTests.swift; sourceTree = "<group>"; };
 		276FB55A1C74D1480055EC7C /* ExtensionsTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExtensionsTests.swift; sourceTree = "<group>"; };
+		27C16CB41C7F359A00182BC7 /* SerializablePerformanceTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SerializablePerformanceTest.swift; sourceTree = "<group>"; };
+		27C16CB61C7F3A2D00182BC7 /* PerformanceTest.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = PerformanceTest.json; sourceTree = "<group>"; };
+		27C16CB81C7F3C3700182BC7 /* PerformanceTestModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PerformanceTestModel.swift; sourceTree = "<group>"; };
+		27C16CBA1C7F432300182BC7 /* PerformanceSmallTest.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = PerformanceSmallTest.json; sourceTree = "<group>"; };
+		27C16CBB1C7F432300182BC7 /* PerformanceTestSmallModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PerformanceTestSmallModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -115,6 +125,10 @@
 				276FB5501C7377B50055EC7C /* SerializableEntityTest.json */,
 				276FB5521C74947D0055EC7C /* StringInitializableTestModel.swift */,
 				276FB5541C7494A30055EC7C /* StringInitializableTest.json */,
+				27C16CB61C7F3A2D00182BC7 /* PerformanceTest.json */,
+				27C16CB81C7F3C3700182BC7 /* PerformanceTestModel.swift */,
+				27C16CBA1C7F432300182BC7 /* PerformanceSmallTest.json */,
+				27C16CBB1C7F432300182BC7 /* PerformanceTestSmallModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -130,6 +144,7 @@
 				276FB54C1C7376F40055EC7C /* SerializableEntityTests.swift */,
 				276FB5561C7495560055EC7C /* StringInitializableTests.swift */,
 				276FB55A1C74D1480055EC7C /* ExtensionsTests.swift */,
+				27C16CB41C7F359A00182BC7 /* SerializablePerformanceTest.swift */,
 			);
 			path = Tests;
 			sourceTree = "<group>";
@@ -293,7 +308,9 @@
 				276FB5511C7377B50055EC7C /* SerializableEntityTest.json in Resources */,
 				272D92751C6DFB7300BCD3B6 /* EnumsTest.json in Resources */,
 				276FB5451C7362EA0055EC7C /* DecodableTest.json in Resources */,
+				27C16CBC1C7F432300182BC7 /* PerformanceSmallTest.json in Resources */,
 				272D92771C6DFB7300BCD3B6 /* PrimitivesTest.json in Resources */,
+				27C16CB71C7F3A2D00182BC7 /* PerformanceTest.json in Resources */,
 				272D92731C6DFB7300BCD3B6 /* CustomOperatorsTest.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -321,8 +338,10 @@
 				276FB54F1C7377070055EC7C /* SerializableEntityTestModel.swift in Sources */,
 				272D92741C6DFB7300BCD3B6 /* CustomOperatorsTestModel.swift in Sources */,
 				272D926A1C6DFB5B00BCD3B6 /* SerializableEnumsTests.swift in Sources */,
+				27C16CBD1C7F432300182BC7 /* PerformanceTestSmallModel.swift in Sources */,
 				276FB5431C73622D0055EC7C /* DecodableModel.swift in Sources */,
 				276FB54D1C7376F40055EC7C /* SerializableEntityTests.swift in Sources */,
+				27C16CB91C7F3C3700182BC7 /* PerformanceTestModel.swift in Sources */,
 				276FB5571C7495560055EC7C /* StringInitializableTests.swift in Sources */,
 				272D92691C6DFB5B00BCD3B6 /* CustomOperatorsTests.swift in Sources */,
 				276FB55B1C74D1480055EC7C /* ExtensionsTests.swift in Sources */,
@@ -330,6 +349,7 @@
 				276FB5531C74947D0055EC7C /* StringInitializableTestModel.swift in Sources */,
 				272D926B1C6DFB5B00BCD3B6 /* SerializablePrimitivesTests.swift in Sources */,
 				272D92781C6DFB7300BCD3B6 /* PrimitivesTestModel.swift in Sources */,
+				27C16CB51C7F359A00182BC7 /* SerializablePerformanceTest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
