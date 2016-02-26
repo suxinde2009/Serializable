@@ -34,11 +34,15 @@
 		276FB5551C7494A30055EC7C /* StringInitializableTest.json in Resources */ = {isa = PBXBuildFile; fileRef = 276FB5541C7494A30055EC7C /* StringInitializableTest.json */; };
 		276FB5571C7495560055EC7C /* StringInitializableTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 276FB5561C7495560055EC7C /* StringInitializableTests.swift */; };
 		276FB55B1C74D1480055EC7C /* ExtensionsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 276FB55A1C74D1480055EC7C /* ExtensionsTests.swift */; };
+		2781B9141C7F671900B3C548 /* Gloss.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2781B9131C7F671900B3C548 /* Gloss.framework */; };
+		2781B9161C7F671B00B3C548 /* ObjectMapper.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2781B9151C7F671B00B3C548 /* ObjectMapper.framework */; };
+		278568401C80509D00D17843 /* JSONCodable.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2785683F1C80509D00D17843 /* JSONCodable.framework */; };
 		27C16CB51C7F359A00182BC7 /* SerializablePerformanceTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27C16CB41C7F359A00182BC7 /* SerializablePerformanceTest.swift */; };
 		27C16CB71C7F3A2D00182BC7 /* PerformanceTest.json in Resources */ = {isa = PBXBuildFile; fileRef = 27C16CB61C7F3A2D00182BC7 /* PerformanceTest.json */; };
 		27C16CB91C7F3C3700182BC7 /* PerformanceTestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27C16CB81C7F3C3700182BC7 /* PerformanceTestModel.swift */; };
 		27C16CBC1C7F432300182BC7 /* PerformanceSmallTest.json in Resources */ = {isa = PBXBuildFile; fileRef = 27C16CBA1C7F432300182BC7 /* PerformanceSmallTest.json */; };
 		27C16CBD1C7F432300182BC7 /* PerformanceTestSmallModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27C16CBB1C7F432300182BC7 /* PerformanceTestSmallModel.swift */; };
+		27C16CC01C7F4DA200182BC7 /* Freddy.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 27C16CBE1C7F486500182BC7 /* Freddy.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -82,11 +86,15 @@
 		276FB5541C7494A30055EC7C /* StringInitializableTest.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = StringInitializableTest.json; sourceTree = "<group>"; };
 		276FB5561C7495560055EC7C /* StringInitializableTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringInitializableTests.swift; sourceTree = "<group>"; };
 		276FB55A1C74D1480055EC7C /* ExtensionsTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExtensionsTests.swift; sourceTree = "<group>"; };
+		2781B9131C7F671900B3C548 /* Gloss.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Gloss.framework; path = Carthage/Build/iOS/Gloss.framework; sourceTree = "<group>"; };
+		2781B9151C7F671B00B3C548 /* ObjectMapper.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ObjectMapper.framework; path = Carthage/Build/iOS/ObjectMapper.framework; sourceTree = "<group>"; };
+		2785683F1C80509D00D17843 /* JSONCodable.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JSONCodable.framework; path = Carthage/Build/iOS/JSONCodable.framework; sourceTree = "<group>"; };
 		27C16CB41C7F359A00182BC7 /* SerializablePerformanceTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SerializablePerformanceTest.swift; sourceTree = "<group>"; };
 		27C16CB61C7F3A2D00182BC7 /* PerformanceTest.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = PerformanceTest.json; sourceTree = "<group>"; };
 		27C16CB81C7F3C3700182BC7 /* PerformanceTestModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PerformanceTestModel.swift; sourceTree = "<group>"; };
 		27C16CBA1C7F432300182BC7 /* PerformanceSmallTest.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = PerformanceSmallTest.json; sourceTree = "<group>"; };
 		27C16CBB1C7F432300182BC7 /* PerformanceTestSmallModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PerformanceTestSmallModel.swift; sourceTree = "<group>"; };
+		27C16CBE1C7F486500182BC7 /* Freddy.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Freddy.framework; path = Carthage/Build/iOS/Freddy.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,7 +109,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				278568401C80509D00D17843 /* JSONCodable.framework in Frameworks */,
+				27C16CC01C7F4DA200182BC7 /* Freddy.framework in Frameworks */,
+				2781B9161C7F671B00B3C548 /* ObjectMapper.framework in Frameworks */,
 				272F1DD11C6A392A0098F620 /* Serializable.framework in Frameworks */,
+				2781B9141C7F671900B3C548 /* Gloss.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -201,6 +213,10 @@
 		272F1E581C6A4F9D0098F620 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				2785683F1C80509D00D17843 /* JSONCodable.framework */,
+				2781B9151C7F671B00B3C548 /* ObjectMapper.framework */,
+				2781B9131C7F671900B3C548 /* Gloss.framework */,
+				27C16CBE1C7F486500182BC7 /* Freddy.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -465,10 +481,11 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
 				);
 				INFOPLIST_FILE = Serializable/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks $(PROJECT_DIR)/Carthage/Build/iOS";
 				PRODUCT_BUNDLE_IDENTIFIER = com.nodes.Serializable;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
@@ -488,10 +505,11 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
 				);
 				INFOPLIST_FILE = Serializable/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks $(PROJECT_DIR)/Carthage/Build/iOS";
 				PRODUCT_BUNDLE_IDENTIFIER = com.nodes.Serializable;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
@@ -501,8 +519,12 @@
 		272F1DDE1C6A392A0098F620 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = SerializableTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks $(PROJECT_DIR)/Carthage/Build/iOS";
 				PRODUCT_BUNDLE_IDENTIFIER = com.nodes.SerializableTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -511,8 +533,12 @@
 		272F1DDF1C6A392A0098F620 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = SerializableTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks $(PROJECT_DIR)/Carthage/Build/iOS";
 				PRODUCT_BUNDLE_IDENTIFIER = com.nodes.SerializableTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};

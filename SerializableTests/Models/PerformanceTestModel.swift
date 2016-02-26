@@ -8,6 +8,11 @@
 
 
 import Serializable
+import Freddy
+import Gloss
+import ObjectMapper
+import JSONCodable
+
 
 struct PerformanceTestModel {
 	
@@ -23,24 +28,24 @@ struct PerformanceTestModel {
 		case Strawberry = "strawberry"
 	}
 	
-	var id = ""
-	var index = 0
-	var guid = ""
-	var isActive = true //<- isActive
-	var balance = ""
+	var id: String = ""
+	var index:Int = 0
+	var guid: String = ""
+	var isActive: Bool = true //<- isActive
+	var balance: String = ""
 	var picture: NSURL?
-	var age = 0
+	var age: Int = 0
 	var eyeColor: EyeColor = .Brown //<- eyeColor
-	var name = Name()
-	var company = ""
-	var email = ""
-	var phone = ""
-	var address = ""
-	var about = ""
-	var registered = ""
-	var latitude = 0.0
-	var longitude = 0.0
-	var greeting = ""
+	var name: Name = Name()
+	var company: String = ""
+	var email: String = ""
+	var phone: String = ""
+	var address: String = ""
+	var about: String = ""
+	var registered: String = ""
+	var latitude: Double = 0.0
+	var longitude: Double = 0.0
+	var greeting: String = ""
 	var favoriteFruit: Fruit? //<- favoriteFruit
 }
 
@@ -51,9 +56,9 @@ extension PerformanceTestModel: Serializable {
 		guid          <== (self, dictionary, "guid")
 		isActive      <== (self, dictionary, "isActive")
 		balance       <== (self, dictionary, "balance")
-		picture       <== (self, dictionary, "picture")
+//		picture       <== (self, dictionary, "picture")
 		age           <== (self, dictionary, "age")
-		eyeColor      <== (self, dictionary, "eyeColor")
+//		eyeColor      <== (self, dictionary, "eyeColor")
 		name          <== (self, dictionary, "name")
 		company       <== (self, dictionary, "company")
 		email         <== (self, dictionary, "email")
@@ -61,10 +66,10 @@ extension PerformanceTestModel: Serializable {
 		address       <== (self, dictionary, "address")
 		about         <== (self, dictionary, "about")
 		registered    <== (self, dictionary, "registered")
-		latitude      <== (self, dictionary, "latitude")
-		longitude     <== (self, dictionary, "longitude")
+//		latitude      <== (self, dictionary, "latitude")
+//		longitude     <== (self, dictionary, "longitude")
 		greeting      <== (self, dictionary, "greeting")
-		favoriteFruit <== (self, dictionary, "favoriteFruit")
+//		favoriteFruit <== (self, dictionary, "favoriteFruit")
 	}
 	
 	func encodableRepresentation() -> NSCoding {
@@ -110,3 +115,155 @@ extension Name: Serializable {
 		return dict
 	}
 }
+
+
+/////////////////////////////////////
+/*
+	Other libraries
+*/
+
+
+// Freddy
+extension PerformanceTestModel: Freddy.JSONDecodable {
+	init(json value: Freddy.JSON) throws {
+		id = try value.string("id")
+		index = try value.int("index")
+		guid = try value.string("guid")
+		isActive = try value.bool("isActive")
+		balance = try value.string("balance")
+		//picture = try value.
+		age = try value.int("age")
+		//eyeColor = try value.
+		name = try value.decode("name")
+		company = try value.string("company")
+		email = try value.string("email")
+		phone = try value.string("phone")
+		address = try value.string("address")
+		about = try value.string("about")
+		registered = try value.string("registered")
+		//latitude = try value.double("latitude")
+		//longitude = try value.double("longitude")
+		greeting = try value.string("greeting")
+		//favoriteFruit = try value.
+	}
+}
+
+extension Name: Freddy.JSONDecodable {
+	init(json value: Freddy.JSON) throws {
+		first = try value.string("first")
+		last = try value.string("last")
+	}
+}
+
+// Gloss
+extension PerformanceTestModel: Gloss.Decodable {
+	init?(json: Gloss.JSON) {
+		id          =  "id" <~~ json ?? id
+		index       =  "index" <~~ json ?? index
+		guid        =  "guid" <~~ json ?? guid
+		isActive    =  "isActive" <~~ json ?? isActive
+		balance     =  "balance" <~~ json ?? balance
+//		picture     =  "picture" <~~ json
+		age         =  "age" <~~ json ?? age
+//		eyeColor    =  "eyeColor" <~~ json ?? eyeColor
+		name        =  "name" <~~ json ?? name
+		company     =  "company" <~~ json ?? company
+		email       =  "email" <~~ json ?? email
+		phone       =  "phone" <~~ json ?? phone
+		address     =  "address" <~~ json ?? address
+		about       =  "about" <~~ json ?? about
+		registered  =  "registered" <~~ json ?? registered
+//		latitude    =  "latitude" <~~ json ?? latitude
+//		longitude   =  "longitude" <~~ json ?? longitude
+		greeting    =  "greeting" <~~ json ?? greeting
+//		favoriteFruit = "favoriteFruit" <~~ json
+	}
+}
+
+extension Name: Gloss.Decodable {
+	init?(json: Gloss.JSON) {
+		first = "first" <~~ json ?? first
+		last = "last" <~~ json ?? last
+	}
+}
+
+// ObjectMapper
+
+extension PerformanceTestModel: Mappable {
+	init?(_ map: Map) {
+		
+	}
+	mutating func mapping(map: Map) {
+		id				<- map["id"]
+		index           <- map["index"]
+		guid			<- map["guid"]
+		isActive        <- map["isActive"]
+		balance         <- map["balance"]
+		//		picture
+		age				<- map["age"]
+		//		eyeColor
+		name			<- map["name"]
+		company         <- map["company"]
+		email           <- map["email"]
+		phone           <- map["phone"]
+		address         <- map["address"]
+		about           <- map["about"]
+		registered      <- map["registered"]
+		//		latitude     
+		//		longitude    
+		greeting        <- map["greeting"]
+		//		favoriteFruit
+	}
+}
+
+extension Name: Mappable {
+	init?(_ map: Map) {
+		
+	}
+	mutating func mapping(map: Map) {
+		first <- map["first"]
+		last <- map["last"]
+	}
+	
+}
+
+// JSONCodable
+
+extension PerformanceTestModel: JSONCodable {
+	init(object: JSONObject) throws {
+		let decoder = JSONDecoder(object: object)
+		
+		id = try decoder.decode("id")
+		index = try decoder.decode("index")
+		guid = try decoder.decode("guid")
+		isActive = try decoder.decode("isActive")
+		balance = try decoder.decode("balance")
+		//picture = try value.
+		age = try decoder.decode("age")
+		//eyeColor = try value.
+		name = try decoder.decode("name")
+		company = try decoder.decode("company")
+		email = try decoder.decode("email")
+		phone = try decoder.decode("phone")
+		address = try decoder.decode("address")
+		about = try decoder.decode("about")
+		registered = try decoder.decode("registered")
+		//latitude = try value.double("latitude")
+		//longitude = try value.double("longitude")
+		greeting = try decoder.decode("greeting")
+		//favoriteFruit = try value.
+		
+		
+	}
+}
+
+extension Name: JSONCodable {
+	init(object: JSONObject) throws {
+		let decoder = JSONDecoder(object: object)
+		
+		first = try decoder.decode("first")
+		last = try decoder.decode("last")
+		
+	}
+}
+

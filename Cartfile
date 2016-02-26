@@ -1,0 +1,4 @@
+github "bignerdranch/Freddy" ~> 2.0
+github "Hearst-DD/ObjectMapper" ~> 1.1
+github "hkellaway/Gloss"
+github "matthewcheok/JSONCodable" ~> 2.1
