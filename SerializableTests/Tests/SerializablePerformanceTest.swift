@@ -33,20 +33,11 @@ class SerializablePerformanceTest: XCTestCase {
 	
     override func setUp() {
         super.setUp()
-		do {
-			if let path = NSBundle(forClass: self.dynamicType).pathForResource("PerformanceTest", ofType: "json"), data = NSData(contentsOfFile: path) {
-				largeData = data
-//				jsonDict = try NSJSONSerialization.JSONObjectWithData(data, options: .AllowFragments) as? NSDictionary
-//				freddyDict = try JSON(data: data)
-			}
-			if let path = NSBundle(forClass: self.dynamicType).pathForResource("PerformanceSmallTest", ofType: "json"), data = NSData(contentsOfFile: path) {
-				smallData = data
-//				smallJsonDict = try NSJSONSerialization.JSONObjectWithData(data, options: .AllowFragments) as? NSDictionary
-//				smallFreddyDict = try JSON(data: data)
-			}
-		} catch {
-			XCTFail("Failed to prepare dictionary.")
-			return
+		if let path = NSBundle(forClass: self.dynamicType).pathForResource("PerformanceTest", ofType: "json"), data = NSData(contentsOfFile: path) {
+			largeData = data
+		}
+		if let path = NSBundle(forClass: self.dynamicType).pathForResource("PerformanceSmallTest", ofType: "json"), data = NSData(contentsOfFile: path) {
+			smallData = data
 		}
     }
 	
@@ -98,7 +89,7 @@ class SerializablePerformanceTest: XCTestCase {
 			}
 		}
 	}
-	
+
 	func testGlossFramework() {
 		self.measureBlock {
 			do {
@@ -106,14 +97,13 @@ class SerializablePerformanceTest: XCTestCase {
 				if let objects = self.glossDict["data"] as? [Gloss.JSON] {
 					let _ = [PerformanceTestModel].fromJSONArray(objects)
 				}
-				
 			}
 			catch {
 				print(error)
 			}
 		}
 	}
-	
+
 	func testGlossFrameworkSmallModel() {
 		self.measureBlock {
 			do {
@@ -151,7 +141,7 @@ class SerializablePerformanceTest: XCTestCase {
 			}
 		}
 	}
-	
+
 	func testJSONCodableFramework() {
 		self.measureBlock {
 			do {

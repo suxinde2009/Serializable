@@ -28,24 +28,24 @@ struct PerformanceTestModel {
 		case Strawberry = "strawberry"
 	}
 	
-	var id: String = ""
-	var index:Int = 0
-	var guid: String = ""
-	var isActive: Bool = true //<- isActive
-	var balance: String = ""
+	var id = ""
+	var index = 0
+	var guid = ""
+	var isActive = true //<- isActive
+	var balance = ""
 	var picture: NSURL?
-	var age: Int = 0
+	var age = 0
 	var eyeColor: EyeColor = .Brown //<- eyeColor
-	var name: Name = Name()
-	var company: String = ""
-	var email: String = ""
-	var phone: String = ""
-	var address: String = ""
-	var about: String = ""
-	var registered: String = ""
-	var latitude: Double = 0.0
-	var longitude: Double = 0.0
-	var greeting: String = ""
+	var name = Name()
+	var company = ""
+	var email = ""
+	var phone = ""
+	var address = ""
+	var about = ""
+	var registered = ""
+	var latitude = 0.0
+	var longitude = 0.0
+	var greeting = ""
 	var favoriteFruit: Fruit? //<- favoriteFruit
 }
 
@@ -176,7 +176,7 @@ extension PerformanceTestModel: Gloss.Decodable {
 //		latitude    =  "latitude" <~~ json ?? latitude
 //		longitude   =  "longitude" <~~ json ?? longitude
 		greeting    =  "greeting" <~~ json ?? greeting
-//		favoriteFruit = "favoriteFruit" <~~ json
+		favoriteFruit = "favoriteFruit" <~~ json
 	}
 }
 
@@ -199,9 +199,9 @@ extension PerformanceTestModel: Mappable {
 		guid			<- map["guid"]
 		isActive        <- map["isActive"]
 		balance         <- map["balance"]
-		//		picture
+//		picture			<- map["picture"]
 		age				<- map["age"]
-		//		eyeColor
+//		eyeColor		<- map["eyeColor"]
 		name			<- map["name"]
 		company         <- map["company"]
 		email           <- map["email"]
@@ -209,10 +209,10 @@ extension PerformanceTestModel: Mappable {
 		address         <- map["address"]
 		about           <- map["about"]
 		registered      <- map["registered"]
-		//		latitude     
-		//		longitude    
+//		latitude		<- map["latitude"]
+//		longitude		<- map["longitude"]
 		greeting        <- map["greeting"]
-		//		favoriteFruit
+//		favoriteFruit   <- map["favoriteFruit"]
 	}
 }
 
@@ -238,9 +238,9 @@ extension PerformanceTestModel: JSONCodable {
 		guid = try decoder.decode("guid")
 		isActive = try decoder.decode("isActive")
 		balance = try decoder.decode("balance")
-		//picture = try value.
+//		picture = try decoder.decode("picture")
 		age = try decoder.decode("age")
-		//eyeColor = try value.
+//		eyeColor = try decoder.decode("eyeColor")
 		name = try decoder.decode("name")
 		company = try decoder.decode("company")
 		email = try decoder.decode("email")
@@ -248,12 +248,10 @@ extension PerformanceTestModel: JSONCodable {
 		address = try decoder.decode("address")
 		about = try decoder.decode("about")
 		registered = try decoder.decode("registered")
-		//latitude = try value.double("latitude")
-		//longitude = try value.double("longitude")
+//		latitude = try decoder.decode("latitude")
+//		longitude = try decoder.decode("longitude")
 		greeting = try decoder.decode("greeting")
-		//favoriteFruit = try value.
-		
-		
+//		favoriteFruit = try decoder.decode("favoriteFruit")
 	}
 }
 
