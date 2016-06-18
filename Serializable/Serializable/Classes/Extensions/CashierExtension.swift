@@ -31,7 +31,7 @@ public extension Cashier {
 	- object: Generic type which confroms with `_ArrayType`.
 	- key: Key as a `String`.
 	*/
-	public func setSerializable<T where T:_ArrayType, T.Iterator.Element: Serializable>(_ object: T, forKey key: String) {
+	public func setSerializable<T where T: Sequence, T.Iterator.Element: Serializable>(_ object: T, forKey key: String) {
 		let boxedArray = object.map { BridgingBox($0) }
 		self.setObject(boxedArray, forKey: key)
 		BridgingBox.sharedBoxCache[self.id+key] = object

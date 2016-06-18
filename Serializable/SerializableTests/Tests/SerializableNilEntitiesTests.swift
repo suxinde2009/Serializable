@@ -52,7 +52,7 @@ class SerializableNilEntitiesTests: XCTestCase {
 
 public struct NilModel {
 	
-	public enum ArrayType: Int {
+	public enum NilArrayType: Int {
 		case first = 0
 		case second = 1
 	}
@@ -61,8 +61,8 @@ public struct NilModel {
 	var name = SimpleModel()
 	var names = [SimpleModel]()
 	var url = URL(string: "http://www.google.com")!
-	var someEnum: ArrayType = .first
-	var someEnumArray: [ArrayType] = []
+	var someEnum: NilArrayType = .first
+	var someEnumArray: [NilArrayType] = []
 	var somePrimitiveArray: [String] = []
 	
 	var optionalId: Int?
@@ -70,7 +70,7 @@ public struct NilModel {
 	var optionalNames: [SimpleModel]?
 	var optionalUrl: URL?
 	var optionalEnum: Type?
-	var optionalEnumArray: [ArrayType]?
+	var optionalEnumArray: [NilArrayType]?
 	var optionalPrimitiveArray: [String]?
 }
 extension NilModel: Serializable {

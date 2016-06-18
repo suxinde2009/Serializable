@@ -12,7 +12,7 @@ import Foundation
 	
 	static var sharedBoxCache = [String : Any]()
 	
-	private var internalValue:Serializable?
+	private var internalValue:Encodable?
 	public var dictValue:NSDictionary?
 	
 	/**
@@ -28,7 +28,7 @@ import Foundation
 		return internalValue as? T
 	}
 	
-	public init(_ value: Serializable) {
+	public init(_ value: Encodable) {
 		self.internalValue = value
 	}
 	

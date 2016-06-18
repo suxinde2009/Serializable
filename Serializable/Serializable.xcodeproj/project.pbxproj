@@ -74,7 +74,6 @@
 		2732ECD61C9F2A4D00BFD4E1 /* SerializableEntityTest.json in Resources */ = {isa = PBXBuildFile; fileRef = 01C706C31C9BEB0C0024E94A /* SerializableEntityTest.json */; };
 		2732ECD71C9F2A4D00BFD4E1 /* SimpleModel.json in Resources */ = {isa = PBXBuildFile; fileRef = 01C706C51C9BEB0C0024E94A /* SimpleModel.json */; };
 		2732ECD81C9F2A4D00BFD4E1 /* DecodableTest.json in Resources */ = {isa = PBXBuildFile; fileRef = 01C706C81C9BEB0C0024E94A /* DecodableTest.json */; };
-		2732ECDA1C9F2A6000BFD4E1 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 27D9ED811C9F1FFC00EB2B49 /* Alamofire.framework */; };
 		2732ECDC1C9F44E800BFD4E1 /* HexInitializableTestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01C706C21C9BEB0C0024E94A /* HexInitializableTestModel.swift */; };
 		2732ECDD1C9F44EB00BFD4E1 /* HexInitializableTest.json in Resources */ = {isa = PBXBuildFile; fileRef = 01C706C11C9BEB0C0024E94A /* HexInitializableTest.json */; };
 		2732ECDE1C9F44EE00BFD4E1 /* HexInitalizableTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01C706B61C9BEAF50024E94A /* HexInitalizableTests.swift */; };
@@ -102,6 +101,27 @@
 		2785B5671C9DE9A400E40605 /* DecodableTest.json in Resources */ = {isa = PBXBuildFile; fileRef = 01C706C81C9BEB0C0024E94A /* DecodableTest.json */; };
 		27B05FD21C9C3869004F2CCB /* NetworkTestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27B05FD11C9C3869004F2CCB /* NetworkTestModel.swift */; };
 		27D9ED7B1C9F1DD500EB2B49 /* CustomOperatorsTestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 272D926E1C6DFB7300BCD3B6 /* CustomOperatorsTestModel.swift */; };
+		8322375E1D15DC210055A640 /* Cashier.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 30C898491C921B84004A25E2 /* Cashier.framework */; };
+		8322375F1D15DC220055A640 /* Cashier.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 30C898491C921B84004A25E2 /* Cashier.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
+		832237621D15DC330055A640 /* BridgingBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01F962121CC38A52006083C5 /* BridgingBox.swift */; };
+		8359EE211D15DDFC00C142FA /* CashierExtensionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83F3AFCE1CE92DB300D47725 /* CashierExtensionTests.swift */; };
+		8359EE221D15DDFD00C142FA /* CashierExtensionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83F3AFCE1CE92DB300D47725 /* CashierExtensionTests.swift */; };
+		8359EE231D15DDFD00C142FA /* CashierExtensionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83F3AFCE1CE92DB300D47725 /* CashierExtensionTests.swift */; };
+		8359EE251D15E09C00C142FA /* CashierExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01F9620D1CC38A52006083C5 /* CashierExtension.swift */; };
+		8359EE261D15E31B00C142FA /* Cashier.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 01CD3F9A1D07043E0044887E /* Cashier.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
+		8359EE271D15E32500C142FA /* Cashier.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 01CD3F981D0704320044887E /* Cashier.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
+		8359EE281D15E32C00C142FA /* Cashier.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 01CD3F9A1D07043E0044887E /* Cashier.framework */; };
+		8359EE291D15E32F00C142FA /* Cashier.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 01CD3F981D0704320044887E /* Cashier.framework */; };
+		8359EE2A1D15E33300C142FA /* Cashier.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 01CD3F961D0704140044887E /* Cashier.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
+		8359EE2B1D15E34200C142FA /* BridgingBoxTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83F3AFCD1CE92DB300D47725 /* BridgingBoxTests.swift */; };
+		8359EE2C1D15E34200C142FA /* BridgingBoxTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83F3AFCD1CE92DB300D47725 /* BridgingBoxTests.swift */; };
+		8359EE2D1D15E34300C142FA /* BridgingBoxTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83F3AFCD1CE92DB300D47725 /* BridgingBoxTests.swift */; };
+		8359EE2E1D15E34E00C142FA /* BridgingBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01F962121CC38A52006083C5 /* BridgingBox.swift */; };
+		8359EE2F1D15E34F00C142FA /* BridgingBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01F962121CC38A52006083C5 /* BridgingBox.swift */; };
+		8359EE301D15E34F00C142FA /* BridgingBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01F962121CC38A52006083C5 /* BridgingBox.swift */; };
+		8359EE311D15E35200C142FA /* CashierExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01F9620D1CC38A52006083C5 /* CashierExtension.swift */; };
+		8359EE321D15E35300C142FA /* CashierExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01F9620D1CC38A52006083C5 /* CashierExtension.swift */; };
+		8359EE331D15E35300C142FA /* CashierExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01F9620D1CC38A52006083C5 /* CashierExtension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -174,10 +194,6 @@
 		2785B5361C9DE72F00E40605 /* Serializable OSXTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Serializable OSXTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		27B05FCF1C9C3842004F2CCB /* AlamofireExtensionTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlamofireExtensionTests.swift; sourceTree = "<group>"; };
 		27B05FD11C9C3869004F2CCB /* NetworkTestModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkTestModel.swift; sourceTree = "<group>"; };
-		27D9ED7D1C9F1FFC00EB2B49 /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Alamofire.framework; sourceTree = "<group>"; };
-		27D9ED811C9F1FFC00EB2B49 /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Alamofire.framework; sourceTree = "<group>"; };
-		27D9ED841C9F1FFC00EB2B49 /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Alamofire.framework; sourceTree = "<group>"; };
-		30C898471C921B84004A25E2 /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Alamofire.framework; sourceTree = "<group>"; };
 		30C898491C921B84004A25E2 /* Cashier.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Cashier.framework; sourceTree = "<group>"; };
 		83F3AFCD1CE92DB300D47725 /* BridgingBoxTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BridgingBoxTests.swift; sourceTree = "<group>"; };
 		83F3AFCE1CE92DB300D47725 /* CashierExtensionTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CashierExtensionTests.swift; sourceTree = "<group>"; };
@@ -188,6 +204,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8322375E1D15DC210055A640 /* Cashier.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -195,6 +212,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8322375F1D15DC220055A640 /* Cashier.framework in Frameworks */,
 				272F1DD11C6A392A0098F620 /* Serializable.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -203,6 +221,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8359EE2A1D15E33300C142FA /* Cashier.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -210,6 +229,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8359EE271D15E32500C142FA /* Cashier.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -217,8 +237,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8359EE291D15E32F00C142FA /* Cashier.framework in Frameworks */,
 				2732ECA41C9F21BF00BFD4E1 /* Serializable.framework in Frameworks */,
-				2732ECDA1C9F2A6000BFD4E1 /* Alamofire.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -226,6 +246,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8359EE261D15E31B00C142FA /* Cashier.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -233,6 +254,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8359EE281D15E32C00C142FA /* Cashier.framework in Frameworks */,
 				2785B5371C9DE72F00E40605 /* Serializable.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -384,7 +406,6 @@
 			isa = PBXGroup;
 			children = (
 				01CD3F9A1D07043E0044887E /* Cashier.framework */,
-				27D9ED7D1C9F1FFC00EB2B49 /* Alamofire.framework */,
 			);
 			path = Mac;
 			sourceTree = "<group>";
@@ -393,7 +414,6 @@
 			isa = PBXGroup;
 			children = (
 				01CD3F981D0704320044887E /* Cashier.framework */,
-				27D9ED811C9F1FFC00EB2B49 /* Alamofire.framework */,
 			);
 			path = tvOS;
 			sourceTree = "<group>";
@@ -402,7 +422,6 @@
 			isa = PBXGroup;
 			children = (
 				01CD3F961D0704140044887E /* Cashier.framework */,
-				27D9ED841C9F1FFC00EB2B49 /* Alamofire.framework */,
 			);
 			path = watchOS;
 			sourceTree = "<group>";
@@ -422,7 +441,6 @@
 		30C898421C921B84004A25E2 /* iOS */ = {
 			isa = PBXGroup;
 			children = (
-				30C898471C921B84004A25E2 /* Alamofire.framework */,
 				30C898491C921B84004A25E2 /* Cashier.framework */,
 			);
 			path = iOS;
@@ -733,6 +751,8 @@
 			files = (
 				01F962351CC38A52006083C5 /* Serializable.swift in Sources */,
 				01F962331CC38A52006083C5 /* Operator.swift in Sources */,
+				8359EE251D15E09C00C142FA /* CashierExtension.swift in Sources */,
+				832237621D15DC330055A640 /* BridgingBox.swift in Sources */,
 				01F962321CC38A52006083C5 /* Extensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -742,10 +762,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				01C706BC1C9BEAF50024E94A /* SerializableNilEntitiesTests.swift in Sources */,
+				8359EE211D15DDFC00C142FA /* CashierExtensionTests.swift in Sources */,
 				272D92761C6DFB7300BCD3B6 /* EnumsTestModel.swift in Sources */,
 				01C706CA1C9BEB0C0024E94A /* StringInitializableTestModel.swift in Sources */,
 				01C706D11C9BEB0C0024E94A /* DecodableModel.swift in Sources */,
 				01C706BA1C9BEAF50024E94A /* StringInitializableTests.swift in Sources */,
+				8359EE2B1D15E34200C142FA /* BridgingBoxTests.swift in Sources */,
 				01C706BD1C9BEAF50024E94A /* DecodableTests.swift in Sources */,
 				272D92741C6DFB7300BCD3B6 /* CustomOperatorsTestModel.swift in Sources */,
 				01C706D01C9BEB0C0024E94A /* SimpleModel.swift in Sources */,
@@ -767,7 +789,9 @@
 			files = (
 				01F962591CC38BCA006083C5 /* Extensions.swift in Sources */,
 				01F962561CC38BCA006083C5 /* Serializable.swift in Sources */,
+				8359EE331D15E35300C142FA /* CashierExtension.swift in Sources */,
 				01F962521CC38BBE006083C5 /* Operator.swift in Sources */,
+				8359EE301D15E34F00C142FA /* BridgingBox.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -777,7 +801,9 @@
 			files = (
 				01F9625D1CC38BCA006083C5 /* Extensions.swift in Sources */,
 				01F9625A1CC38BCA006083C5 /* Serializable.swift in Sources */,
+				8359EE321D15E35300C142FA /* CashierExtension.swift in Sources */,
 				01F962511CC38BBD006083C5 /* Operator.swift in Sources */,
+				8359EE2F1D15E34F00C142FA /* BridgingBox.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -791,11 +817,13 @@
 				2732ECC21C9F2A3600BFD4E1 /* StringInitializableTestModel.swift in Sources */,
 				2732ECC31C9F2A3600BFD4E1 /* HexInitializableTestModel.swift in Sources */,
 				2732ECC41C9F2A3600BFD4E1 /* SerializableEntityTestModel.swift in Sources */,
+				8359EE2D1D15E34300C142FA /* BridgingBoxTests.swift in Sources */,
 				2732ECC51C9F2A3600BFD4E1 /* SimpleModel.swift in Sources */,
 				2732ECC61C9F2A3600BFD4E1 /* DecodableModel.swift in Sources */,
 				2732ECC71C9F2A3600BFD4E1 /* NetworkTestModel.swift in Sources */,
 				2732ECC81C9F2A3600BFD4E1 /* CustomOperatorsTests.swift in Sources */,
 				2732ECC91C9F2A3600BFD4E1 /* SerializableEnumsTests.swift in Sources */,
+				8359EE231D15DDFD00C142FA /* CashierExtensionTests.swift in Sources */,
 				2732ECCA1C9F2A3600BFD4E1 /* SerializablePrimitivesTests.swift in Sources */,
 				2732ECCB1C9F2A3600BFD4E1 /* StringInitializableTests.swift in Sources */,
 				2732ECCC1C9F2A3600BFD4E1 /* HexInitalizableTests.swift in Sources */,
@@ -811,7 +839,9 @@
 			files = (
 				01F962611CC38BCB006083C5 /* Extensions.swift in Sources */,
 				01F9625E1CC38BCB006083C5 /* Serializable.swift in Sources */,
+				8359EE311D15E35200C142FA /* CashierExtension.swift in Sources */,
 				01F962501CC38BBD006083C5 /* Operator.swift in Sources */,
+				8359EE2E1D15E34E00C142FA /* BridgingBox.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -825,11 +855,13 @@
 				2785B54E1C9DE98000E40605 /* StringInitializableTestModel.swift in Sources */,
 				2785B5501C9DE98000E40605 /* SerializableEntityTestModel.swift in Sources */,
 				2785B5511C9DE98000E40605 /* SimpleModel.swift in Sources */,
+				8359EE2C1D15E34200C142FA /* BridgingBoxTests.swift in Sources */,
 				2785B5521C9DE98000E40605 /* DecodableModel.swift in Sources */,
 				2785B5531C9DE98000E40605 /* NetworkTestModel.swift in Sources */,
 				2785B5541C9DE98000E40605 /* CustomOperatorsTests.swift in Sources */,
 				2785B5551C9DE98000E40605 /* SerializableEnumsTests.swift in Sources */,
 				2785B5561C9DE98000E40605 /* SerializablePrimitivesTests.swift in Sources */,
+				8359EE221D15DDFD00C142FA /* CashierExtensionTests.swift in Sources */,
 				2785B5571C9DE98000E40605 /* StringInitializableTests.swift in Sources */,
 				2785B5591C9DE98000E40605 /* SerializableNilEntitiesTests.swift in Sources */,
 				2785B55A1C9DE98000E40605 /* DecodableTests.swift in Sources */,
@@ -967,6 +999,7 @@
 					"$(PROJECT_DIR)/Dependencies/Mac",
 					"$(PROJECT_DIR)/Dependencies/tvOS",
 					"$(PROJECT_DIR)/Dependencies/watchOS",
+					"$(PROJECT_DIR)/Dependencies/iOS",
 				);
 				INFOPLIST_FILE = "$(SRCROOT)/Serializable/Supporting Files/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
@@ -994,6 +1027,7 @@
 					"$(PROJECT_DIR)/Dependencies/Mac",
 					"$(PROJECT_DIR)/Dependencies/tvOS",
 					"$(PROJECT_DIR)/Dependencies/watchOS",
+					"$(PROJECT_DIR)/Dependencies/iOS",
 				);
 				INFOPLIST_FILE = "$(SRCROOT)/Serializable/Supporting Files/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
@@ -1061,6 +1095,7 @@
 					"$(PROJECT_DIR)/Dependencies/Mac",
 					"$(PROJECT_DIR)/Dependencies/tvOS",
 					"$(PROJECT_DIR)/Dependencies/iOS",
+					"$(PROJECT_DIR)/Dependencies/watchOS",
 				);
 				INFOPLIST_FILE = "$(SRCROOT)/Serializable/Supporting Files/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
@@ -1088,6 +1123,7 @@
 					"$(PROJECT_DIR)/Dependencies/Mac",
 					"$(PROJECT_DIR)/Dependencies/tvOS",
 					"$(PROJECT_DIR)/Dependencies/iOS",
+					"$(PROJECT_DIR)/Dependencies/watchOS",
 				);
 				INFOPLIST_FILE = "$(SRCROOT)/Serializable/Supporting Files/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
@@ -1116,6 +1152,7 @@
 					"$(PROJECT_DIR)/Dependencies/Mac",
 					"$(PROJECT_DIR)/Dependencies/watchOS",
 					"$(PROJECT_DIR)/Dependencies/iOS",
+					"$(PROJECT_DIR)/Dependencies/tvOS",
 				);
 				INFOPLIST_FILE = "$(SRCROOT)/Serializable/Supporting Files/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
@@ -1142,6 +1179,7 @@
 					"$(PROJECT_DIR)/Dependencies/Mac",
 					"$(PROJECT_DIR)/Dependencies/watchOS",
 					"$(PROJECT_DIR)/Dependencies/iOS",
+					"$(PROJECT_DIR)/Dependencies/tvOS",
 				);
 				INFOPLIST_FILE = "$(SRCROOT)/Serializable/Supporting Files/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
@@ -1212,6 +1250,7 @@
 					"$(PROJECT_DIR)/Dependencies/tvOS",
 					"$(PROJECT_DIR)/Dependencies/watchOS",
 					"$(PROJECT_DIR)/Dependencies/iOS",
+					"$(PROJECT_DIR)/Dependencies/Mac",
 				);
 				FRAMEWORK_VERSION = A;
 				INFOPLIST_FILE = "$(SRCROOT)/Serializable/Supporting Files/Info.plist";
@@ -1240,6 +1279,7 @@
 					"$(PROJECT_DIR)/Dependencies/tvOS",
 					"$(PROJECT_DIR)/Dependencies/watchOS",
 					"$(PROJECT_DIR)/Dependencies/iOS",
+					"$(PROJECT_DIR)/Dependencies/Mac",
 				);
 				FRAMEWORK_VERSION = A;
 				INFOPLIST_FILE = "$(SRCROOT)/Serializable/Supporting Files/Info.plist";
