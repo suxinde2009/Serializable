@@ -10,7 +10,7 @@ import Serializable
 
 struct NetworkTestModel {
 	var origin = ""
-	var url: NSURL?
+	var url: URL?
 }
 
 extension NetworkTestModel: Serializable {

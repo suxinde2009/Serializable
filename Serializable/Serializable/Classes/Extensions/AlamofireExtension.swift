@@ -19,30 +19,30 @@ public extension Parser {
      Parse any generic object using the parsing handler.
      */
     
-    internal static func serializer<T>(parsingHandler parsingHandler: (( data: AnyObject? ) -> T?)?) -> ResponseSerializer<T, NSError> {
+    internal static func serializer<T>(parsingHandler: (( data: AnyObject? ) -> T?)?) -> ResponseSerializer<T, NSError> {
         return ResponseSerializer<T, NSError> { (request, response, data, error) -> Result<T, NSError> in
             
-            let JSONResponseSerializer = Request.JSONResponseSerializer(options: .AllowFragments)
+            let JSONResponseSerializer = Request.JSONResponseSerializer(options: .allowFragments)
             let result = JSONResponseSerializer.serializeResponse(request, response, data, error)
             
             switch result {
-            case let .Success(value):
+            case let .success(value):
                 if let parsedObject: T = parsingHandler?( data: value ) {
-                    NSNotificationCenter.defaultCenter().postNotificationName(APICallSucceededNotification, object: nil)
-                    return .Success(parsedObject)
+                    NotificationCenter.default().post(name: Notification.Name(rawValue: APICallSucceededNotification), object: nil)
+                    return .success(parsedObject)
                 } else {
-                    return .Failure(NSError(domain: "Serializable.Parser", code: 2048, userInfo: [ NSLocalizedDescriptionKey : "Parsing block failed!", "JSONResponse" : value]))
+                    return .failure(NSError(domain: "Serializable.Parser", code: 2048, userInfo: [ NSLocalizedDescriptionKey : "Parsing block failed!", "JSONResponse" : value]))
                 }
                 
-            case let .Failure(error):
-                if let data = data where data.length != 0 {
+            case let .failure(error):
+                if let data = data where data.count != 0 {
                     var userInfo = error.userInfo
-                    userInfo["ResponseString"] = String(data: data, encoding: NSUTF8StringEncoding)
+                    userInfo["ResponseString"] = String(data: data, encoding: String.Encoding.utf8)
                     let newError = NSError(domain: error.domain, code: error.code, userInfo: userInfo)
-                    return .Failure(newError)
+                    return .failure(newError)
                 }
 
-                return .Failure(error)
+                return .failure(error)
             }
         }
     }
@@ -73,7 +73,7 @@ public extension Alamofire.Request
      - returns: The request
      */
   
-    public func responseSerializable<T:Decodable>(completionHandler: Response<T, NSError> -> Void, unwrapper:Parser.Unwrapper = Parser.defaultUnwrapper) -> Self {
+    public func responseSerializable<T:Decodable>(_ completionHandler: (Response<T, NSError>) -> Void, unwrapper:Parser.Unwrapper = Parser.defaultUnwrapper) -> Self {
         let serializer = Parser.serializer(parsingHandler: {
             ( data: AnyObject? ) -> T? in
             
@@ -102,7 +102,7 @@ public extension Alamofire.Request
      - returns: The request
      */
     
-    public func responseSerializable<T:Decodable>(completionHandler: Response<[T], NSError> -> Void, unwrapper:Parser.Unwrapper = Parser.defaultUnwrapper) -> Self {
+    public func responseSerializable<T:Decodable>(_ completionHandler: (Response<[T], NSError>) -> Void, unwrapper:Parser.Unwrapper = Parser.defaultUnwrapper) -> Self {
         
         let serializer = Parser.serializer(parsingHandler: {
             ( data: AnyObject? ) -> [T]? in

@@ -22,11 +22,11 @@ public protocol Encodable {
 
 public protocol Decodable {
     init(dictionary:NSDictionary?)
-    static func array(source: AnyObject?) -> [Self]
+    static func array(_ source: AnyObject?) -> [Self]
 }
 
 public extension Decodable {
-    public static func array(source: AnyObject?) -> [Self] {
+    public static func array(_ source: AnyObject?) -> [Self] {
         guard let source = source as? [NSDictionary] else {
             return [Self]()
         }
@@ -54,7 +54,7 @@ public extension Keymappable {
 
      - returns: A mapped object conforming to *Serializable*, or nil if parsing failed
      */
-    public func mapped<T where T:Decodable>(dictionary: NSDictionary?, key: String) -> T? {
+    public func mapped<T where T:Decodable>(_ dictionary: NSDictionary?, key: String) -> T? {
 
         // Ensure the dictionary is not nil
         guard let dict = dictionary else { return nil }
@@ -78,13 +78,13 @@ public extension Keymappable {
 
      - returns: An array of mapped objects conforming to *Serializable*, or an empty array if parsing failed.
      */
-    public func mapped<T where T:SequenceType, T.Generator.Element: Decodable>(dictionary: NSDictionary?, key: String) -> T? {
+    public func mapped<T where T:Sequence, T.Iterator.Element: Decodable>(_ dictionary: NSDictionary?, key: String) -> T? {
         // Ensure the dictionary is not nil and get the value from the dictionary for our key
         guard let dict = dictionary, sourceOpt = dict[key] else { return nil }
 
         if sourceOpt is [NSDictionary] {
             let source = (sourceOpt as! [NSDictionary])
-            let finalArray = source.map { T.Generator.Element.init(dictionary: $0) } as? T
+            let finalArray = source.map { T.Iterator.Element.init(dictionary: $0) } as? T
             return finalArray
         }
 
@@ -104,7 +104,7 @@ public extension Keymappable {
 
      - returns: The value of primitive type `T` or `nil` if parsing was unsuccessful.
      */
-    public func mapped<T>(dictionary: NSDictionary?, key: String) -> T? {
+    public func mapped<T>(_ dictionary: NSDictionary?, key: String) -> T? {
 
         // Ensure the dictionary is not nil
         guard let dict = dictionary else { return nil }
@@ -156,7 +156,7 @@ public extension Keymappable {
 
      - returns: The value of type `T` or `nil` if parsing was unsuccessful.
      */
-    public func mapped<T:StringInitializable>(dictionary: NSDictionary?, key: String) -> T? {
+    public func mapped<T:StringInitializable>(_ dictionary: NSDictionary?, key: String) -> T? {
         if let dict = dictionary, source = dict[key] as? String where source.isEmpty == false {
             return T.fromString(source)
         }
@@ -181,7 +181,7 @@ public extension Keymappable {
      - returns: The enumeration of enum type `T` or `nil` if parsing was unsuccessful or
      enumeration does not exist.
      */
-    public func mapped<T:RawRepresentable>(dictionary: NSDictionary?, key: String) -> T? {
+    public func mapped<T:RawRepresentable>(_ dictionary: NSDictionary?, key: String) -> T? {
         guard let source: T.RawValue = self.mapped(dictionary, key: key) else {
             return nil
         }
@@ -202,9 +202,9 @@ public extension Keymappable {
 
      - returns: An array of enum type `T` or an empty array if parsing was unsuccessful.
      */
-    public func mapped<T where T:SequenceType, T.Generator.Element: RawRepresentable>(dictionary: NSDictionary?, key: String) -> T? {
-        if let dict = dictionary, source = dict[key] as? [T.Generator.Element.RawValue] {
-            let finalArray = source.map { T.Generator.Element.init(rawValue: $0)! }
+    public func mapped<T where T:Sequence, T.Iterator.Element: RawRepresentable>(_ dictionary: NSDictionary?, key: String) -> T? {
+        if let dict = dictionary, source = dict[key] as? [T.Iterator.Element.RawValue] {
+            let finalArray = source.map { T.Iterator.Element.init(rawValue: $0)! }
             return (finalArray as! T)
         }
 
@@ -226,7 +226,7 @@ public extension Keymappable {
 	
 	- returns: The value of type `T` or `nil` if parsing was unsuccessful.
 	*/
-	public func mapped<T: HexInitializable>(dictionary: NSDictionary?, key: String) -> T? {
+	public func mapped<T: HexInitializable>(_ dictionary: NSDictionary?, key: String) -> T? {
 		guard let dict = dictionary, source = dict[key] else {
 			return nil
 		}

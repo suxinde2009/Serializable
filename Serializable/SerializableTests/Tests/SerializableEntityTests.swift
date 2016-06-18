@@ -17,8 +17,8 @@ class SerializableEntityTests: XCTestCase {
 	override func setUp() {
 		super.setUp()
 		do {
-			if let path = NSBundle(forClass: self.dynamicType).pathForResource("SerializableEntityTest", ofType: "json"), data = NSData(contentsOfFile: path) {
-				bridgedDictionary = try NSJSONSerialization.JSONObjectWithData(data, options: .AllowFragments) as? NSDictionary
+			if let path = Bundle(for: self.dynamicType).pathForResource("SerializableEntityTest", ofType: "json"), data = try? Data(contentsOf: URL(fileURLWithPath: path)) {
+				bridgedDictionary = try JSONSerialization.jsonObject(with: data, options: .allowFragments) as? NSDictionary
 				testModel = SerializableEntityTestModel(dictionary: bridgedDictionary)
 			}
 		} catch {

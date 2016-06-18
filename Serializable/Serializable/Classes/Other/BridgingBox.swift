@@ -34,16 +34,16 @@ import Foundation
 	
 	required public init?(coder aDecoder: NSCoder) {
 		super.init()
-		dictValue = aDecoder.decodeObjectForKey("dictValue") as? NSDictionary
+		dictValue = aDecoder.decodeObject(forKey: "dictValue") as? NSDictionary
 	}
 	
-	public func encodeWithCoder(aCoder: NSCoder) {
+	public func encode(with aCoder: NSCoder) {
 		if let value = internalValue {
 			if dictValue == nil {
 				dictValue = value.encodableRepresentation() as? NSDictionary
 			}
 			
-			aCoder.encodeObject(dictValue, forKey:"dictValue")
+			aCoder.encode(dictValue, forKey:"dictValue")
 		}
 	}
 }

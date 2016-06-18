@@ -22,10 +22,10 @@ class AlamofireExtensionTests: XCTestCase {
  
 	
 	func testAlamofireExtension() {
-		let expectation = expectationWithDescription("Expected network request success")
+		let expectation = self.expectation(withDescription: "Expected network request success")
 		let handler:(Alamofire.Response<NetworkTestModel, NSError>) -> Void = { result in
 			switch result.result {
-			case .Success:
+			case .success:
 				expectation.fulfill()
 			default:
 				break // Fail
@@ -33,68 +33,68 @@ class AlamofireExtensionTests: XCTestCase {
 			}
 		}
 		manager.request(.GET, "http://httpbin.org/get").responseSerializable(handler)
-		waitForExpectationsWithTimeout(5, handler: nil)
+		waitForExpectations(withTimeout: 5, handler: nil)
 	}
 	
 	func testAlamofireExtensionBadJSON() {
-		let expectation = expectationWithDescription("Expected bad data from response")
+		let expectation = self.expectation(withDescription: "Expected bad data from response")
 		let handler:(Alamofire.Response<NetworkTestModel, NSError>) -> Void = { result in
 			switch result.result {
-			case .Failure:
+			case .failure:
 				expectation.fulfill()
 			default:
 				break
 			}
 		}
 		manager.request(.GET, "http://httpbin.org/deny").responseSerializable(handler)
-		waitForExpectationsWithTimeout(5, handler: nil)
+		waitForExpectations(withTimeout: 5, handler: nil)
 	}
 
 	
 	func testAlamofireExtensionBadJSONObject() {
-		let expectation = expectationWithDescription("Expected bad object from response")
+		let expectation = self.expectation(withDescription: "Expected bad object from response")
 		let handler:(Alamofire.Response<[NetworkTestModel], NSError>) -> Void = { result in
 			switch result.result {
-			case .Failure:
+			case .failure:
 				expectation.fulfill()
 			default:
 				break
 			}
 		}
 		manager.request(.GET, "http://httpbin.org/get").responseSerializable(handler)
-		waitForExpectationsWithTimeout(5, handler: nil)
+		waitForExpectations(withTimeout: 5, handler: nil)
 	}
 	func testAlamofireExtensionUnexpectedArrayJSON() {
-		let expectation = expectationWithDescription("Expected array data to single object from response")
+		let expectation = self.expectation(withDescription: "Expected array data to single object from response")
 		let handler:(Alamofire.Response<DecodableModel, NSError>) -> Void = { result in
 			switch result.result {
-			case .Failure:
+			case .failure:
 				expectation.fulfill()
 			default:
 				break
 			}
 		}
 		manager.request(.GET, "https://raw.githubusercontent.com/nodes-ios/Serializable/master/Serializable/SerializableTests/TestEndpoint/ArrayTest.json").responseSerializable(handler)
-		waitForExpectationsWithTimeout(5, handler: nil)
+		waitForExpectations(withTimeout: 5, handler: nil)
 	}
 	func testAlamofireExtensionEmptyJSON() {
-		let expectation = expectationWithDescription("Expected empty response")
+		let expectation = self.expectation(withDescription: "Expected empty response")
 		let handler:(Alamofire.Response<NetworkTestModel, NSError>) -> Void = { result in
 			switch result.result {
-			case .Failure:
+			case .failure:
 				expectation.fulfill()
 			default:
 				break
 			}
 		}
 		manager.request(.GET, "https://raw.githubusercontent.com/nodes-ios/Serializable/master/Serializable/SerializableTests/TestEndpoint/Empty.json").responseSerializable(handler)
-		waitForExpectationsWithTimeout(5, handler: nil)
+		waitForExpectations(withTimeout: 5, handler: nil)
 	}
 	func testAlamofireArrayUnwrapper() {
-		let expectation = expectationWithDescription("Expected unwrapped array response")
+		let expectation = self.expectation(withDescription: "Expected unwrapped array response")
 		let handler:(Alamofire.Response<[DecodableModel], NSError>) -> Void = { result in
 			switch result.result {
-			case .Success:
+			case .success:
 				expectation.fulfill()
 			default:
 				break
@@ -105,14 +105,14 @@ class AlamofireExtensionTests: XCTestCase {
 		manager.request(.GET,
 			"https://raw.githubusercontent.com/nodes-ios/Serializable/master/Serializable/SerializableTests/TestEndpoint/NestedArrayTest.json")
 			.responseSerializable(handler, unwrapper: unwrapper)
-		waitForExpectationsWithTimeout(5, handler: nil)
+		waitForExpectations(withTimeout: 5, handler: nil)
 	}
 	
 	func testAlamofireArrayNotUnwrapped() {
-		let expectation = expectationWithDescription("Expected unwrapped array response")
+		let expectation = self.expectation(withDescription: "Expected unwrapped array response")
 		let handler:(Alamofire.Response<[DecodableModel], NSError>) -> Void = { result in
 			switch result.result {
-			case .Failure:
+			case .failure:
 				expectation.fulfill()
 			default:
 				break
@@ -122,13 +122,13 @@ class AlamofireExtensionTests: XCTestCase {
 		manager.request(.GET,
 			"https://raw.githubusercontent.com/nodes-ios/Serializable/master/Serializable/SerializableTests/TestEndpoint/NestedArrayTest.json")
 			.responseSerializable(handler)
-		waitForExpectationsWithTimeout(5, handler: nil)
+		waitForExpectations(withTimeout: 5, handler: nil)
 	}
 	func testAlamofireWrongTypeUnwrapper() {
-		let expectation = expectationWithDescription("Expected unwrapped array response")
+		let expectation = self.expectation(withDescription: "Expected unwrapped array response")
 		let handler:(Alamofire.Response<DecodableModel, NSError>) -> Void = { result in
 			switch result.result {
-			case .Success:
+			case .success:
 				expectation.fulfill()
 			default:
 				break
@@ -139,6 +139,6 @@ class AlamofireExtensionTests: XCTestCase {
 		manager.request(.GET,
 			"https://raw.githubusercontent.com/nodes-ios/Serializable/master/Serializable/SerializableTests/TestEndpoint/NestedArrayTest.json")
 			.responseSerializable(handler, unwrapper: unwrapper)
-		waitForExpectationsWithTimeout(5, handler: nil)
+		waitForExpectations(withTimeout: 5, handler: nil)
 	}
 }
