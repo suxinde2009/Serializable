@@ -28,8 +28,7 @@ class AlamofireExtensionTests: XCTestCase {
 			case .success:
 				expectation.fulfill()
 			default:
-				break // Fail
-				
+				break // Fail				
 			}
 		}
         manager.request(.GET, "http://httpbin.org/get").responseSerializable(handler)
