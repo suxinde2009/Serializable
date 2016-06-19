@@ -32,7 +32,7 @@ class AlamofireExtensionTests: XCTestCase {
 				
 			}
 		}
-        let _ = manager.request(.GET, "http://httpbin.org/get").responseSerializable(handler)
+        manager.request(.GET, "http://httpbin.org/get").responseSerializable(handler)
 		waitForExpectations(withTimeout: 5, handler: nil)
 	}
 	
@@ -46,7 +46,7 @@ class AlamofireExtensionTests: XCTestCase {
 				break
 			}
 		}
-		let _ = manager.request(.GET, "http://httpbin.org/deny").responseSerializable(handler)
+		manager.request(.GET, "http://httpbin.org/deny").responseSerializable(handler)
 		waitForExpectations(withTimeout: 5, handler: nil)
 	}
 
@@ -61,7 +61,7 @@ class AlamofireExtensionTests: XCTestCase {
 				break
 			}
 		}
-		let _ = manager.request(.GET, "http://httpbin.org/get").responseSerializable(handler)
+		manager.request(.GET, "http://httpbin.org/get").responseSerializable(handler)
 		waitForExpectations(withTimeout: 5, handler: nil)
 	}
 	func testAlamofireExtensionUnexpectedArrayJSON() {
@@ -74,7 +74,7 @@ class AlamofireExtensionTests: XCTestCase {
 				break
 			}
 		}
-		let _ = manager.request(.GET, "https://raw.githubusercontent.com/nodes-ios/Serializable/master/Serializable/SerializableTests/TestEndpoint/ArrayTest.json").responseSerializable(handler)
+		manager.request(.GET, "https://raw.githubusercontent.com/nodes-ios/Serializable/master/Serializable/SerializableTests/TestEndpoint/ArrayTest.json").responseSerializable(handler)
 		waitForExpectations(withTimeout: 5, handler: nil)
 	}
 	func testAlamofireExtensionEmptyJSON() {
@@ -87,7 +87,7 @@ class AlamofireExtensionTests: XCTestCase {
 				break
 			}
 		}
-		let _ = manager.request(.GET, "https://raw.githubusercontent.com/nodes-ios/Serializable/master/Serializable/SerializableTests/TestEndpoint/Empty.json").responseSerializable(handler)
+		manager.request(.GET, "https://raw.githubusercontent.com/nodes-ios/Serializable/master/Serializable/SerializableTests/TestEndpoint/Empty.json").responseSerializable(handler)
 		waitForExpectations(withTimeout: 5, handler: nil)
 	}
 	func testAlamofireArrayUnwrapper() {
@@ -102,7 +102,7 @@ class AlamofireExtensionTests: XCTestCase {
 		}
 		let unwrapper: Parser.Unwrapper = { $0.0["data"] }
 		
-		let _ = manager.request(.GET,
+		manager.request(.GET,
 			"https://raw.githubusercontent.com/nodes-ios/Serializable/master/Serializable/SerializableTests/TestEndpoint/NestedArrayTest.json")
 			.responseSerializable(handler, unwrapper: unwrapper)
 		waitForExpectations(withTimeout: 5, handler: nil)
@@ -119,7 +119,7 @@ class AlamofireExtensionTests: XCTestCase {
 			}
 		}		
 		
-		let _ = manager.request(.GET,
+		manager.request(.GET,
 			"https://raw.githubusercontent.com/nodes-ios/Serializable/master/Serializable/SerializableTests/TestEndpoint/NestedArrayTest.json")
 			.responseSerializable(handler)
 		waitForExpectations(withTimeout: 5, handler: nil)
@@ -136,7 +136,7 @@ class AlamofireExtensionTests: XCTestCase {
 		}
 		let unwrapper: Parser.Unwrapper = { $0.0["data"] }
 		
-		let _ = manager.request(.GET,
+		manager.request(.GET,
 			"https://raw.githubusercontent.com/nodes-ios/Serializable/master/Serializable/SerializableTests/TestEndpoint/NestedArrayTest.json")
 			.responseSerializable(handler, unwrapper: unwrapper)
 		waitForExpectations(withTimeout: 5, handler: nil)
