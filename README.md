@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="./Serializable_icon.png?raw=true" alt="Serializable"/>
+<img src="./Serializable_icon.png?raw=true" alt="Serializable"/>
 </p>
 
 <center>[![Travis](https://img.shields.io/travis/nodes-ios/Serializable.svg)](https://travis-ci.org/nodes-ios/Serializable) 
@@ -32,7 +32,7 @@ There are plenty of other Encoding and Decoding frameworks available. Why should
 ## 📝 Requirements
 
 * iOS 8.0+
-* Swift 2.0+
+* Swift 3.0+
 
 ## 📦 Installation
 
@@ -53,10 +53,10 @@ To use Serializable as a [Swift Package Manager](https://swift.org/package-manag
 import PackageDescription
 
 let package = Package(
-    name: "YourPackage",
-    dependencies: [
-        .Package(url: "https://github.com/nodes-ios/Serializable.git", majorVersion: 0)
-    ]
+name: "YourPackage",
+dependencies: [
+.Package(url: "https://github.com/nodes-ios/Serializable.git", majorVersion: 0)
+]
 )
 ~~~
 
@@ -79,9 +79,9 @@ Primitive types do not need to have an explicit type, if Swift is able to infer 
 
 ~~~swift
 struct Foo {
-	var id = 0
-	var name = ""
-	var address: String? 
+var id = 0
+var name = ""
+var address: String? 
 }
 ~~~
 
@@ -91,19 +91,19 @@ struct Foo {
 
 ~~~swift
 extension Foo: Serializable {
-    init(dictionary: NSDictionary?) {
-        id      <== (self, dictionary, "id")
-        name    <== (self, dictionary, "name")
-        address <== (self, dictionary, "address")
-    }
+init(dictionary: NSDictionary?) {
+id      <== (self, dictionary, "id")
+name    <== (self, dictionary, "name")
+address <== (self, dictionary, "address")
+}
 
-    func encodableRepresentation() -> NSCoding {
-        let dict = NSMutableDictionary()
-        (dict, "id")      <== id
-        (dict, "name")    <== name
-        (dict, "address") <== address
-        return dict
-    }
+func encodableRepresentation() -> NSCoding {
+let dict = NSMutableDictionary()
+(dict, "id")      <== id
+(dict, "name")    <== name
+(dict, "address") <== address
+return dict
+}
 }
 ~~~
 
@@ -130,30 +130,30 @@ In this example, we have two models, Student and School.
 
 ~~~swift
 struct Student {
-	enum Gender: String {
-		case Male = "male"
-		case Female = "female"
-		case Unspecified = "unspecified"
-	}
-	
-	var name = ""
-	var age: Int = 0
-	var gender: Gender?
+enum Gender: String {
+case Male = "male"
+case Female = "female"
+case Unspecified = "unspecified"
+}
+
+var name = ""
+var age: Int = 0
+var gender: Gender?
 }
 
 struct School {
-	enum Sport: Int {
-		case Football
-		case Basketball
-		case Tennis
-		case Swimming
-	}
-	
-	var name = ""
-	var location = ""
-	var website: NSURL?
-	var students: [Student] = []
-	var sports: [Sport]?
+enum Sport: Int {
+case Football
+case Basketball
+case Tennis
+case Swimming
+}
+
+var name = ""
+var location = ""
+var website: NSURL?
+var students: [Student] = []
+var sports: [Sport]?
 }
 ~~~
 
@@ -162,39 +162,39 @@ You can get as complicated as you like, and the syntax will always remain the sa
 
 ~~~swift
 extension Student: Serializable {
-	init(dictionary: NSDictionary?) {
-		name   <== (self, dictionary, "name")
-		age    <== (self, dictionary, "age")
-		gender <== (self, dictionary, "gender")
-	}
-	
-	func encodableRepresentation() -> NSCoding {
-		let dict = NSMutableDictionary()
-		(dict, "name")   <== name
-		(dict, "age")    <== age
-		(dict, "gender") <== gender
-		return dict
-	}
+init(dictionary: NSDictionary?) {
+name   <== (self, dictionary, "name")
+age    <== (self, dictionary, "age")
+gender <== (self, dictionary, "gender")
+}
+
+func encodableRepresentation() -> NSCoding {
+let dict = NSMutableDictionary()
+(dict, "name")   <== name
+(dict, "age")    <== age
+(dict, "gender") <== gender
+return dict
+}
 }
 
 extension School: Serializable {
-	init(dictionary: NSDictionary?) {
-		name     <== (self, dictionary, "name")
-		location <== (self, dictionary, "location")
-		website  <== (self, dictionary, "website")
-		students <== (self, dictionary, "students")
-		sports   <== (self, dictionary, "sports")
-	}
-	
-	func encodableRepresentation() -> NSCoding {
-		let dict = NSMutableDictionary()
-		(dict, "name")     <== name
-		(dict, "location") <== location
-		(dict, "website")  <== website
-		(dict, "students") <== students
-		(dict, "sports")   <== sports
-		return dict
-	}
+init(dictionary: NSDictionary?) {
+name     <== (self, dictionary, "name")
+location <== (self, dictionary, "location")
+website  <== (self, dictionary, "website")
+students <== (self, dictionary, "students")
+sports   <== (self, dictionary, "sports")
+}
+
+func encodableRepresentation() -> NSCoding {
+let dict = NSMutableDictionary()
+(dict, "name")     <== name
+(dict, "location") <== location
+(dict, "website")  <== website
+(dict, "students") <== students
+(dict, "sports")   <== sports
+return dict
+}
 }
 ~~~
 Again, the [![ModelBoiler](http://i.imgur.com/V5UzMVk.png)](https://github.com/nodes-ios/ModelBoiler) [Model Boiler](https://github.com/nodes-ios/ModelBoiler) generates all of this code for you in less than a second!
@@ -209,7 +209,7 @@ Consider an endpoint returning a single `school` structure matching the struct f
 
 ~~~swift
 static func requestSchool:(completion: (Response<School, NSError>) -> Void)) {
-	request(.GET, "http://somewhere.com/school/1").responseSerializable(completion)
+request(.GET, "http://somewhere.com/school/1").responseSerializable(completion)
 }
 ~~~
 
@@ -217,13 +217,13 @@ In the consuming method you use it like this:
 
 ~~~swift
 ConnectionManager.requestSchool() { (response) in 
-	switch response.result {
-		case .Success(let school):
-			//Use your new school object!
-			
-		case .Failure(let error):
-			//Handle the error object, or check your Response for more detail
-	}
+switch response.result {
+case .Success(let school):
+//Use your new school object!
+
+case .Failure(let error):
+//Handle the error object, or check your Response for more detail
+}
 }
 ~~~
 
@@ -231,7 +231,7 @@ For an array of objects, use the same technique:
 
 ~~~swift
 static func requestStudents:(completion: (Response<[Student], NSError>) -> Void)) {
-	request(.GET, "http://somewhere.com/school/1/students").responseSerializable(completion)
+request(.GET, "http://somewhere.com/school/1/students").responseSerializable(completion)
 }
 ~~~
 
@@ -239,14 +239,14 @@ Some APIs wrap their data in containers. Use the `unwrapper` closure for that. L
 
 ~~~json
 {
-	"students" : [
-		{
-		    "..." : "..."
-		},
-		{
-		    "..." : "..."
-		}
-	]
+"students" : [
+{
+"..." : "..."
+},
+{
+"..." : "..."
+}
+]
 }
 ~~~
 
@@ -254,7 +254,7 @@ The `unwrapper` closure has 2 input arguments: The `sourceDictionary` (the JSON 
 
 ~~~swift
 static func requestStudents:(completion: (Response<[Student], NSError>) -> Void)) {
-	request(.GET, "http://somewhere.com/school/1/students").responseSerializable(completion, unwrapper: { $0.0["students"] })
+request(.GET, "http://somewhere.com/school/1/students").responseSerializable(completion, unwrapper: { $0.0["students"] })
 }
 ~~~
 
