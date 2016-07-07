@@ -74,7 +74,7 @@ public extension Alamofire.Request
      */
     
     @discardableResult
-    public func responseSerializable<T:Decodable>(_ completionHandler: (Response<T, NSError>) -> Void, unwrapper:Parser.Unwrapper = Parser.defaultUnwrapper) -> Self {
+    public func responseSerializable<T:Serializable>(_ completionHandler: (Response<T, NSError>) -> Void, unwrapper:Parser.Unwrapper = Parser.defaultUnwrapper) -> Self {
         let serializer = Parser.serializer(parsingHandler: {
             ( data: AnyObject? ) -> T? in
             
@@ -104,7 +104,7 @@ public extension Alamofire.Request
      */
     
     @discardableResult
-    public func responseSerializable<T:Decodable>(_ completionHandler: (Response<[T], NSError>) -> Void, unwrapper:Parser.Unwrapper = Parser.defaultUnwrapper) -> Self {
+    public func responseSerializable<T:Serializable>(_ completionHandler: (Response<[T], NSError>) -> Void, unwrapper:Parser.Unwrapper = Parser.defaultUnwrapper) -> Self {
         
         let serializer = Parser.serializer(parsingHandler: {
             ( data: AnyObject? ) -> [T]? in
