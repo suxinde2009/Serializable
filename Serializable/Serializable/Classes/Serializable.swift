@@ -22,7 +22,7 @@ public protocol Encodable {
 
 public protocol Decodable {
     init(dictionary:NSDictionary?)
-    static func array(_ source: AnyObject?) -> [Self]
+//    static func array(_ source: AnyObject?) -> [Self] //Disabled becuase it makes swift 3.0 think the protocol is a generic one
 }
 
 public extension Decodable {
