@@ -28,7 +28,7 @@ public extension Parser {
             switch result {
             case let .success(value):
                 if let parsedObject: T = parsingHandler?( data: value ) {
-                    NotificationCenter.default().post(name: Notification.Name(rawValue: APICallSucceededNotification), object: nil)
+                    NotificationCenter.default.post(name: Notification.Name(rawValue: APICallSucceededNotification), object: nil)
                     return .success(parsedObject)
                 } else {
                     return .failure(NSError(domain: "Serializable.Parser", code: 2048, userInfo: [ NSLocalizedDescriptionKey : "Parsing block failed!", "JSONResponse" : value]))
